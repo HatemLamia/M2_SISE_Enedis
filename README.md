@@ -127,7 +127,7 @@ M2_ENEDIS/
 ├── train_models.py             # Entraînement des modèles
 ├── Home.py                     # Point d’entrée Streamlit
 ├── requirements.txt            # Dépendances Python
-├── runtime.txt # Version Python pour le déploiement
+├── runtime.txt                 # Version Python pour le déploiement
 ├── README.md
 └── LICENSE
 ```
