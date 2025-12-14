@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
 import folium
-from streamlit.components.v1 import html
+from streamlit_folium import st_folium
 from pyproj import Transformer
-import base64   # <-- ajouté pour le footer
+import base64
 
 # ---------------------------
 # CONFIG DE LA PAGE
@@ -20,7 +20,6 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-    /* ----- STYLE GLOBAL ----- */
     .main {
         background: #f3f7f4;
     }
@@ -29,18 +28,15 @@ st.markdown("""
         color: #1b5e20;
     }
 
-    /* ----- SIDEBAR ----- */
     [data-testid="stSidebar"] {
         background-color: #0f172a !important;
         padding-top: 30px;
     }
 
-    /* Texte en blanc */
     [data-testid="stSidebar"] * {
         color: #e8f5e9 !important;
     }
 
-    /* Bouton actif → vert */
     .css-1v0mbdj, .css-17lntkn, .css-1jneuhg {
         background-color: #2e7d32 !important;
         color: white !important;
@@ -48,13 +44,11 @@ st.markdown("""
         font-weight: bold;
     }
 
-    /* Hover */
     .css-1oe5cao:hover, .css-1o6k8w4:hover {
         background-color: rgba(46,125,50,0.2) !important;
         border-radius: 10px;
     }
 
-    /* ----- ICÔNES DU MENU ----- */
     [data-testid="stSidebarNav"] li:nth-child(1) a::before {
         content: "🏠";
         font-size: 18px;
@@ -81,8 +75,6 @@ st.markdown("""
         content: "📬 ";
     }
 
-
-    /* ----- HEADER (barre verte) ----- */
     .header-box {
         background: #2e7d32;
         padding: 30px 30px;
@@ -98,7 +90,6 @@ st.markdown("""
         margin-top: 5px;
     }
 
-    /* ----- FOOTER ANIME DANS LA SIDEBAR ----- */
     .sidebar-footer {
         position: fixed;
         bottom: 25px;
@@ -137,7 +128,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-
 # ---------------------------
 # FOOTER
 # ---------------------------
@@ -158,7 +148,6 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
 
-
 # ---------------------------
 # HEADER
 # ---------------------------
@@ -172,7 +161,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-
 # ---------------------------
 # DONNÉES & CARTE
 # ---------------------------
@@ -180,7 +168,6 @@ st.markdown("""
 def load_data():
     df = pd.read_csv("data/dpe_existant.csv")
 
-    # Colonnes BAN lambert 93
     COL_X = "Coordonnée_cartographique_X_(BAN)"
     COL_Y = "Coordonnée_cartographique_Y_(BAN)"
 
@@ -198,20 +185,17 @@ def load_data():
     return df
 
 df = load_data()
-
 df_sample = df.head(500)
 
 COL_SURF = "Surface_habitable_logement"
 COL_DPE = "Etiquette_DPE"
 COL_YEAR = "Année_construction"
 
-# Centre de la carte
 center_lat = df_sample["latitude"].mean()
 center_lon = df_sample["longitude"].mean()
 
 m = folium.Map(location=[center_lat, center_lon], zoom_start=11)
 
-# Points
 for _, row in df_sample.iterrows():
     popup = (
         f"Surface : {row.get(COL_SURF, 'NA')} m²<br>"
@@ -228,5 +212,7 @@ for _, row in df_sample.iterrows():
         fill_opacity=0.6,
     ).add_to(m)
 
-# Affichage
-html(m._repr_html_(), height=600)
+# ---------------------------
+# AFFICHAGE CARTE (CORRIGÉ)
+# ---------------------------
+st_folium(m, width=1200, height=600, key="map_dpe_lyon")
