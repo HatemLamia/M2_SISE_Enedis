@@ -35,14 +35,23 @@ L’application a pour objectifs de :
 
 ---
 
-## ▶️ Démarrage de l’application
-
-Depuis la racine du projet :
+## ▶️ Lancement de l’application en local
 
 ```bash
+# Création et activation de l’environnement
+conda create -n greensolutions python=3.11
+conda activate greensolutions
+
+# Installation des dépendances
 pip install -r requirements.txt
+
+# Préparation des données
 python clean_dpe_dataset.py
+
+# Entraînement des modèles
 python train_models.py
+
+# Lancement de l’application Streamlit
 streamlit run Home.py
 ```
 ---
@@ -94,6 +103,7 @@ M2_ENEDIS/
 ├── train_models.py             # Entraînement des modèles
 ├── Home.py                     # Point d’entrée Streamlit
 ├── requirements.txt            # Dépendances Python
+├── runtime.txt # Version Python pour le déploiement
 ├── README.md
 └── LICENSE
 ```

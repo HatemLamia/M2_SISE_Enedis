@@ -80,6 +80,7 @@ M2_ENEDIS/
 ├── train_models.py             # Entraînement des modèles
 ├── Home.py                     # Point d’entrée Streamlit
 ├── requirements.txt            # Dépendances Python
+├── runtime.txt # Version Python pour le déploiement
 └── README.md
 ```
 
@@ -112,48 +113,35 @@ Bibliothèques principales :
 - scikit-learn
 - matplotlib
 - folium
+- streamlit-folium
 - pyproj
 - joblib
 
 ---
-
 ## 7. Installation et exécution locale
 
-### Prérequis
-- Python 3.11
-- pip
-
-### Installation des prèrequis
-Après avoir cloné le dépôt et s’être positionné à la racine du projet, installer les dépendances :
 ```bash
+# Création et activation d’un environnement Python dédié afin d’isoler les dépendances du projet
+conda create -n greensolutions python=3.11
+conda activate greensolutions
+
+# Installation des bibliothèques Python requises (Streamlit, Machine Learning, visualisation, etc.)
 pip install -r requirements.txt
-```
-### Entraînement des modèles de Machine Learning
 
-Avant de lancer l’application Streamlit, il est nécessaire d’entraîner les modèles de Machine Learning utilisés pour la classification et la régression.
+# Nettoyage et préparation des données DPE à partir des fichiers bruts ADEME
+# Cette étape génère un jeu de données prêt pour l’apprentissage des modèles
+python clean_dpe_dataset.py
 
-Cette étape permet de générer les fichiers de modèles sauvegardés au format .pkl, qui seront ensuite chargés automatiquement par l’application.
-
-L’entraînement s’effectue à l’aide du script suivant :
-```bash
+# Entraînement des modèles de Machine Learning :
+# - classification des passoires énergétiques
+# - régression de la consommation de chauffage
+# Les modèles entraînés sont sauvegardés dans le dossier models/
 python train_models.py
-```
 
-À l’issue de l’exécution, les fichiers suivants sont générés dans le dossier models/ :
-
-- model_classification.pkl : modèle de classification des passoires énergétiques,
-
-- model_regression.pkl : modèle de régression de la consommation de chauffage.
-
-⚠️ Cette étape est requise une seule fois, sauf en cas de modification des données ou des paramètres d’entraînement.
-
-### Lancement de l'application
-Une fois les modèles entraînés, lancer l’application Streamlit :
-```bash
+# Lancement de l’application Streamlit en local
 streamlit run Home.py
 ```
-
-## Accès à l’application
+## 8. Accès à l’application
 
 L’application GreenSolutions est accessible via un navigateur web, aussi bien en local pour le développement que via une version déployée en ligne.  
 Le fonctionnement et les fonctionnalités sont identiques dans les deux cas.
@@ -161,13 +149,13 @@ Le fonctionnement et les fonctionnalités sont identiques dans les deux cas.
 | Mode d’accès | URL | Description |
 |-------------|-----|-------------|
 | Accès local | http://localhost:8501 | Accès à l’application Streamlit en environnement local |
-| Accès web (déployé) | https://greensolutions69.streamlit.app/| Accès à l’application GreenSolutions via une URL publique |
+| Accès web (déployé) | https://greensolutions69.streamlit.app/ | Accès à l’application GreenSolutions via une URL publique |
 
 L’interface permet d’accéder à l’ensemble des fonctionnalités : visualisations, cartographie et prédictions énergétiques.
 
 
 ---
-## 8. Conclusion
+## 9. Conclusion
 
 Ce document présente l’organisation technique du projet et le déroulement des différentes étapes, depuis l’entraînement des modèles jusqu’à l’exécution de l’application.
 
