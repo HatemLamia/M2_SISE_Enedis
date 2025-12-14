@@ -91,6 +91,7 @@ M2_ENEDIS/
 ├── requirements.txt            # Dépendances Python
 ├── README.md
 └── LICENSE
+```
 
 ## 🚀 Accès à l’application
 
