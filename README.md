@@ -35,23 +35,47 @@ L’application a pour objectifs de :
 
 ---
 
-## ▶️ Lancement de l’application en local
+## ▶️ Lancement de l'application en local
 
+### Prérequis
+- Anaconda installé sur votre machine
+- Python 3.11
+
+### Étapes d'installation et d'exécution
+
+1. **Cloner le dépôt**
 ```bash
-# Création et activation de l’environnement
+git clone <url-du-depot>
+```
+2. **Ouvrir le terminal Anaconda**
+
+3. **Se positionner dans le dossier du projet**
+```bash
+cd <nom-du-projet>
+```
+4. **Création et activation de l’environnement**
+```bash
 conda create -n greensolutions python=3.11
 conda activate greensolutions
+```
 
-# Installation des dépendances
+5. **Installation des dépendances**
+```bash
 pip install -r requirements.txt
+```
 
-# Préparation des données
+6. **Préparation des données**
+```bash
 python clean_dpe_dataset.py
+```
 
-# Entraînement des modèles
+7. **Entraînement des modèles**
+```bash
 python train_models.py
+```
 
-# Lancement de l’application Streamlit
+8. **Lancement de l’application Streamlit**
+```bash
 streamlit run Home.py
 ```
 ---
