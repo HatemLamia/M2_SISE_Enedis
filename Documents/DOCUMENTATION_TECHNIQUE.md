@@ -167,7 +167,7 @@ L’interface permet d’accéder à l’ensemble des fonctionnalités : visuali
 
 
 ---
-
 ## 8. Conclusion
 
-Cette documentation technique présente une architecture simple et reproductible, conforme aux exigences du cahier des charges et adaptée à un projet académique en version simplifiée.
+Ce document présente l’organisation technique du projet et le déroulement des différentes étapes, depuis l’entraînement des modèles jusqu’à l’exécution de l’application.
+
