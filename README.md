@@ -44,6 +44,7 @@ pip install -r requirements.txt
 python clean_dpe_dataset.py
 python train_models.py
 streamlit run Home.py
+```
 ---
 
 ## 🧩 Fonctionnalités (vue d’ensemble)
