@@ -26,7 +26,7 @@ os.makedirs("models", exist_ok=True)
 # ============================================================
 # 1. Chargement des données
 # ============================================================
-DATA_PATH = "data/dpe_existant.csv"
+DATA_PATH = "data/dpe_existant_clean.csv"
 print(f"📂 Chargement des données depuis {DATA_PATH} ...")
 df = pd.read_csv(DATA_PATH, low_memory=False)
 

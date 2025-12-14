@@ -13,7 +13,7 @@ st.set_page_config(
 )
 
 # ---------------------------
-# STYLE GLOBAL (même que Home)
+# STYLE GLOBAL
 # ---------------------------
 st.markdown("""
 <style>
@@ -175,7 +175,7 @@ with st.sidebar:
     """, unsafe_allow_html=True)
 
 # ---------------------------
-# HEADER (barre verte)
+# HEADER 
 # ---------------------------
 st.markdown("""
 <div class="header-box">
@@ -221,7 +221,7 @@ COL_CONSO = "Conso_chauffage_é_finale"
 COL_ENERGIE = "Type_énergie_n°1"
 
 # =========================
-# 2. Filtres (dans la page, plus dans la sidebar)
+# 2. Filtres
 # =========================
 st.markdown("### 🔍 Filtres")
 

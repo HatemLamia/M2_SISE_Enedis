@@ -15,7 +15,7 @@ st.set_page_config(
 )
 
 # ---------------------------
-# STYLE GLOBAL (même que Home)
+# STYLE GLOBAL
 # ---------------------------
 st.markdown("""
 <style>
@@ -139,7 +139,7 @@ st.markdown("""
 
 
 # ---------------------------
-# FOOTER (logo animé)
+# FOOTER
 # ---------------------------
 def load_image_base64(path):
     with open(path, "rb") as f:
@@ -160,7 +160,7 @@ with st.sidebar:
 
 
 # ---------------------------
-# HEADER (barre verte)
+# HEADER
 # ---------------------------
 st.markdown("""
 <div class="header-box">

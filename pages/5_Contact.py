@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # ---------------------------
-# STYLE GLOBAL (même que les autres pages)
+# STYLE GLOBAL
 # ---------------------------
 st.markdown("""
 <style>

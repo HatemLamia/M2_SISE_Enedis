@@ -1,0 +1,93 @@
+# 🏡 GreenSolutions — Analyse & Prédiction du DPE (Rhône – 69)
+
+<p align="center">
+  <img src="./assets/logo_green.png" alt="GreenSolutions Logo" width="160">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white" />
+  <img src="https://img.shields.io/badge/Scikit--Learn-ML-F7931E?logo=scikit-learn&logoColor=white" />
+  <img src="https://img.shields.io/badge/ADEME-Données%20publiques-2E7D32" />
+</p>
+
+---
+
+## 📘 Présentation générale
+
+**GreenSolutions** est une application web interactive développée dans le cadre du **Master 2 SISE**.  
+Elle exploite les **données publiques de l’ADEME (DPE logements existants)** afin d’analyser et d’estimer la performance énergétique des logements du **département du Rhône (69)**.
+
+Le projet s’inscrit dans une **version simplifiée du sujet initial**, conformément aux consignes pédagogiques :
+- sans API,
+- sans Docker,
+- sans intelligence artificielle générative.
+
+---
+
+## 🎯 Objectifs du projet
+
+L’application a pour objectifs de :
+- proposer une **exploration visuelle** des diagnostics de performance énergétique,
+- offrir une **cartographie interactive** des logements,
+- permettre une **estimation du statut énergétique** d’un logement (passoire ou non),
+- estimer la **consommation annuelle de chauffage** à partir de caractéristiques déclarées.
+
+---
+
+## 🚀 Accès à l’application
+
+- **Application Streamlit** :  
+  👉 URL à renseigner après déploiement (Streamlit Cloud ou Render)
+
+---
+
+## 🧩 Fonctionnalités (vue d’ensemble)
+
+- Consultation du **contexte et des données DPE**
+- Visualisations interactives avec filtres dynamiques
+- Carte interactive des logements du Rhône
+- Formulaire de prédiction énergétique
+- Page de contact et informations projet
+
+> Le détail fonctionnel de chaque page est décrit dans la **documentation fonctionnelle**.
+
+---
+
+## 🗂️ Structure du dépôt
+
+```text
+M2_ENEDIS/
+│
+├── assets/                     # Ressources graphiques
+│   ├── architecture_greensolutions.png
+│   ├── logo_green.png
+│   ├── good.png
+│   └── bad.png
+│
+├── data/                       # Données DPE
+│   ├── dpe_existant.csv
+│   └── dpe_existant_clean.csv
+│
+├── Documents/                  # Livrables Markdown
+│   ├── RAPPORT_ETUDE_DPE.md
+│   ├── DOCUMENTATION_TECHNIQUE.md
+│   └── DOCUMENTATION_FONCTIONNELLE.md
+│
+├── models/                     # Modèles entraînés
+│   ├── model_classification.pkl
+│   └── model_regression.pkl
+│
+├── pages/                      # Pages Streamlit
+│   ├── 1_Contexte.py
+│   ├── 2_Visualisations.py
+│   ├── 3_Carte.py
+│   ├── 4_Predictions.py
+│   └── 5_Contact.py
+│
+├── clean_dpe_dataset.py        # Préparation des données
+├── train_models.py             # Entraînement des modèles
+├── Home.py                     # Point d’entrée Streamlit
+├── requirements.txt            # Dépendances Python
+├── README.md
+└── LICENSE

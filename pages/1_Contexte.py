@@ -145,7 +145,7 @@ st.markdown("""
 
 
 # ---------------------------------
-# FOOTER (logo animé)
+# FOOTER
 # ---------------------------------
 
 def load_image_base64(path):
@@ -200,6 +200,7 @@ st.markdown("""
 
 col1, col2, col3 = st.columns(3)
 
+
 with col1:
     st.metric("Nombre de lignes", len(df))
 
@@ -207,11 +208,8 @@ with col2:
     st.metric("Nombre de colonnes", df.shape[1])
 
 with col3:
-    if "classe_consommation_energie" in df.columns:
-        pct_passoires = df["classe_consommation_energie"].isin(["E", "F", "G"]).mean() * 100
-        st.metric("% de passoires (E/F/G)", f"{pct_passoires:.1f} %")
-    else:
-        st.write("Étiquette DPE non trouvée")
+    st.metric("Type de logements", "Logements existants")
+
 
 st.markdown("""
 <div class="section-card">
