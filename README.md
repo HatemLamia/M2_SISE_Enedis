@@ -105,7 +105,7 @@ L’application GreenSolutions est consultable depuis un navigateur web, soit en
 | Type d’accès | Adresse | Remarque |
 |-------------|---------|----------|
 | Local | http://localhost:8501 | Lancement de l’application en local |
-| En ligne | https://greensolutions.example.com | Application déployée et accessible via une URL publique |
+| En ligne | https://greensolutions69.streamlit.app/ | Application déployée et accessible via une URL publique |
 
 Les fonctionnalités disponibles sont identiques quel que soit le mode d’accès.
 

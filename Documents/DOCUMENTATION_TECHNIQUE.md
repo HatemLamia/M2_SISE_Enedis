@@ -161,7 +161,7 @@ Le fonctionnement et les fonctionnalités sont identiques dans les deux cas.
 | Mode d’accès | URL | Description |
 |-------------|-----|-------------|
 | Accès local | http://localhost:8501 | Accès à l’application Streamlit en environnement local |
-| Accès web (déployé) | https://greensolutions-app.example.com | Accès à l’application GreenSolutions via une URL publique |
+| Accès web (déployé) | https://greensolutions69.streamlit.app/| Accès à l’application GreenSolutions via une URL publique |
 
 L’interface permet d’accéder à l’ensemble des fonctionnalités : visualisations, cartographie et prédictions énergétiques.
 
