@@ -35,11 +35,15 @@ L’application a pour objectifs de :
 
 ---
 
-## 🚀 Accès à l’application
+## ▶️ Démarrage de l’application
 
-- **Application Streamlit** :  
-  👉 URL à renseigner après déploiement (Streamlit Cloud ou Render)
+Depuis la racine du projet :
 
+```bash
+pip install -r requirements.txt
+python clean_dpe_dataset.py
+python train_models.py
+streamlit run Home.py
 ---
 
 ## 🧩 Fonctionnalités (vue d’ensemble)
