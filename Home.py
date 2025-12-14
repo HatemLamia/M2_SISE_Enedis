@@ -226,7 +226,7 @@ with col2:
     st.markdown("""
     <div class="feature-card">
         <h3>🔮 Prédictions</h3>
-        <p>Modèles ML pour prédire l’étiquette DPE et la consommation de votre logement.</p>
+        <p>Modèles de Machine Learning pour identifier les passoires énergétiques (E/F/G) et prédire la consommation de chauffage.</p>
     </div>
     """, unsafe_allow_html=True)
 
