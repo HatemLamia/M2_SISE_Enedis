@@ -91,3 +91,22 @@ M2_ENEDIS/
 ├── requirements.txt            # Dépendances Python
 ├── README.md
 └── LICENSE
+
+## 🚀 Accès à l’application
+
+L’application GreenSolutions est consultable depuis un navigateur web, soit en environnement local, soit via une version déployée en ligne.
+
+| Type d’accès | Adresse | Remarque |
+|-------------|---------|----------|
+| Local | http://localhost:8501 | Lancement de l’application en local |
+| En ligne | https://greensolutions.example.com | Application déployée et accessible via une URL publique |
+
+Les fonctionnalités disponibles sont identiques quel que soit le mode d’accès.
+
+---
+
+## 👤 Auteur
+
+**Hatem Lamia**  
+Master 2 SISE  
+Projet académique – 2024/2025
